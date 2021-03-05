@@ -2,19 +2,9 @@
 Tests use Selenium WebDriver with Chrome and ChromeDriver.
 The fixtures set up and clean up the ChromeDriver instance.
 """
-import pytest
-from selenium.webdriver import Chrome
 
 from pages.result import DuckDuckGoResultPage
 from pages.search import DuckDuckGoSearchPage
-
-
-@pytest.fixture
-def browser():
-   driver = Chrome()
-   driver.implicitly_wait(10)
-   yield driver
-   driver.quit()
 
 
 def test_basic_duckduckgo_search(browser):
